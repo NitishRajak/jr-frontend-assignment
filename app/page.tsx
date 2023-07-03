@@ -30,7 +30,7 @@ export default function Home() {
     };
 
     fetchAlbums();
-  }, [searchQuery]); // Include searchQuery as a dependency
+  }, [searchQuery]);
 
   return (
     <div className="container mx-auto p-4">

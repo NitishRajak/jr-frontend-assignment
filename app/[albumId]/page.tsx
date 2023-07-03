@@ -1,18 +1,20 @@
 "use client";
 import React from "react";
 import axios from "axios";
-// import { useRouter } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+// import { useRouter } from "next/router";
 
-const AlbumDetails = () => {
+const AlbumDetails = ({ searchParams, params }) => {
   const [albumDetails, setAlbumDetails] = React.useState(null);
-  //   const router = useRouter();
-  //   const { albumId } = router.query;
+
+  // console.log("album", albumId);
+  console.log(searchParams, "searchparams");
+  console.log(params, "params");
 
   const fetchAlbumDetails = async () => {
     try {
       const response = await axios.get(
-        `https://deezerdevs-deezer.p.rapidapi.com/album/103248`,
+        `https://deezerdevs-deezer.p.rapidapi.com/album/${params.albumId}`,
 
         {
           headers: {
